@@ -1,14 +1,16 @@
 {
     "name": "doufen-platform",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "",
     "scripts": {
         "start": "echo please use \"npm run app\" and \"npm run service\"",
-        "postinstall": "virtualenv .venv && source ./.venv/Scripts/activate && pip install -r ./requirements.txt && mkdir var && mkdir var/data && mkdir var/log",
-        "app": "electron ./src/app --debug",
-        "service": "source ./.venv/Scripts/activate && python ./src/service/main.py --debug",
+        "postinstall": "virtualenv .venv && source ./.venv/bin/activate && pip install -r ./requirements.txt && mkdir var && mkdir var/data && mkdir var/log",
+        "app": "electron ./src/app",
+        "service": "source ./.venv/bin/activate && python ./src/service/main.py",
         "build:service": "source ./.venv/Scripts/activate && source ./scripts/build.sh",
-        "build:app": "electron-builder --win --x64 --project ./src/app"
+        "build:service_mac": "source ./.venv/bin/activate && source ./scripts/build_mac.sh",
+        "build:app": "electron-builder --win --x64 --project ./src/app",
+        "build:app_mac": "electron-builder --mac --project ./src/app"
     },
     "repository": {
         "type": "git",

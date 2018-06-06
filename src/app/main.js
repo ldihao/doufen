@@ -108,7 +108,7 @@ function main(args) {
         console.debug = console.log
     } else {
         console.debug = (...args) => {}
-        childProcess.spawn('service')
+        childProcess.exec('./service')
     }
 
     let serviceUrl = url.format({

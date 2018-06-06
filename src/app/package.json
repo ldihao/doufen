@@ -26,7 +26,10 @@
         "productName": "doufen",
         "win": {
             "icon": "./app.ico",
-            "target": ["portable", "zip"]
+            "target": [
+                "portable",
+                "zip"
+            ]
         },
         "directories": {
             "output": "../../dist"
